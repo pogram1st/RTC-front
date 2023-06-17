@@ -1,0 +1,19 @@
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 40px;
+    color: #313131;
+  }
+  h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #313131;
+  }
+}
