@@ -7,6 +7,6 @@ const options = {
   transports: ['websocket'],
 };
 
-const socket = io(process.env.REACT_APP_IO || 4444, options);
+const socket = io(process.env.REACT_APP_IO || 'http://localhost:4444', options);
 
 export default socket;
