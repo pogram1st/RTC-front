@@ -151,13 +151,18 @@ const useWebRTC = (roomID) => {
 
     useEffect(() => {
         async function startCapture() {
-            localMediaStream.current = await navigator.mediaDevices.getUserMedia({
-                audio: true,
-                video: {
-                    width: 1280,
-                    height: 720,
-                }
-            });
+            try {
+                localMediaStream.current = await navigator.mediaDevices.getUserMedia({
+                    audio: true,
+                    video: {
+                        width: 1280,
+                        height: 720,
+                    }
+                });
+            } catch (e) {
+                console.log(e)
+                // await navigator.mediaDevices.enumerateDevices().then(devices=>{alert(devices)})
+            }
 
             addNewClient(LOCAL_VIDEO, () => {
                 const localVideoElement = peerMediaElements.current[LOCAL_VIDEO];
